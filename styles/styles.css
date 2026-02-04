@@ -367,3 +367,14 @@ section h2 {
     }
 
 }
+
+@media (max-width: 768px) {
+  .main-title {
+    white-space: normal;
+    width: 100%;
+    border-right: none;
+    animation: none;
+    font-size: 22px;
+    text-align: center;
+  }
+}
