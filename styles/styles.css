@@ -24,12 +24,6 @@ body > header {
     z-index: 1000;
 }
 
-body > header > .title > .name {
-    font-family: "Montserrat", sans-serif;
-    color: #fff;
-    font-weight: 600;
-}
-
 body > header > .title {
     display: flex;
     align-items: center;
@@ -39,6 +33,24 @@ body > header > .title {
 body > header > .title > .logo {
     width: 30px;
     height: 30px;
+}
+
+body > header > .title > .name {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-weight: 600;
+}
+
+body > header > .title > .ch-link {
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+body > header > .title > .ch-link:hover {
+    color: #aaa;
 }
 
 body > header > .bot-button {
@@ -54,7 +66,7 @@ body > header > .bot-button {
     font-family: "Montserrat", sans-serif;
     color: #fff;
     font-weight: 600;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 }
 
 body > header > .bot-button:hover {
@@ -71,52 +83,47 @@ body > header > .bot-button > .bot-logo {
     height: 20px;
 }
 
-body > header > .title > .ch-link {
-    color: #ffffff;
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-body > header > .title > .ch-link:hover {
-    color: #aaa
-}
-
 body > main {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 50px;
 }
 
 .hero {
-    margin-top: 30px;
-    text-align: center;
+    width: 100vw;
+    height: calc(50vh - 25px);
+    min-height: 350px;
+
     background-image: url("../images/hero-banner.png");
     background-size: cover;
-    width: 100vw;
-    height: 50%;
+    background-position: center;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     position: relative;
-    transform: translateX(-50%)
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
 }
 
 .main-title {
-    margin-top: 70px;
     font-family: "JetBrains Mono", monospace;
     font-size: 35px;
     color: #fff;
 
-    display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-
     border-right: 3px solid #fff;
     width: 0;
 
@@ -143,7 +150,7 @@ body > main {
     transform: translateY(15px);
 
     animation: showSubtitle 1s ease forwards;
-    animation-delay: 4s; /* ЖДЁМ КОНЕЦ ПЕЧАТИ */
+    animation-delay: 4s;
 }
 
 @keyframes showSubtitle {
@@ -151,4 +158,170 @@ body > main {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #161616;
+    padding: 25px;
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.why {
+    background: #121212;
+}
+
+.why .card {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.process {
+    background: #161616;
+}
+
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.step {
+    background: #1f1f1f;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: 500;
+}
+
+.step span {
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-right: 8px;
+    font-weight: 700;
+}
+
+.cta {
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+}
+
+.cta p {
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.cta button {
+    background: #ffffff;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+}
+
+.why-we {
+    padding: 90px 20px;
+    background: linear-gradient(180deg, #121212, #161616);
+    text-align: center;
+}
+
+.why-we h2 {
+    font-size: 32px;
+    margin-bottom: 60px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.why-card {
+    background: #1b1b1b;
+    border-radius: 20px;
+    padding: 35px 25px;
+    transition: 0.35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-card::before {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 60%);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.why-card:hover::before {
+    opacity: 1;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.why-icon {
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+
+.why-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.why-card p {
+    font-size: 15px;
+    opacity: 0.75;
+    line-height: 1.5;
 }
