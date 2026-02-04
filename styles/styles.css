@@ -342,3 +342,27 @@ section h2 {
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
+
+/* 📱 МОБИЛЬНАЯ АДАПТАЦИЯ */
+@media (max-width: 768px) {
+
+    .main-title {
+        font-size: 22px;
+        white-space: normal;     /* разрешаем перенос */
+        width: 100%;             /* убираем фикс */
+        border-right: none;      /* убираем курсор */
+        animation: none;         /* без печати на мобиле */
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 0 15px;
+    }
+
+}
